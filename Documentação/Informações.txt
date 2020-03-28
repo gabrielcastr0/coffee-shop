@@ -1,0 +1,6 @@
+Paleta de Cores:
+Fonte Principal: Montserrat
+Cinza fundo carrossel: #EDEDED
+Cinza fundo Principal: #F3F5F8
+Marrom: #C17139
+Cinza letras: #707070      
