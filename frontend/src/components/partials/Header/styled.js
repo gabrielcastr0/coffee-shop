@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export const HeaderArea = styled.div`
     height:100px;
-    background-color:#803d38;
+    background-color:white;
     /* display:flex; */
-    border-bottom: 2px solid black;
 
 .container{
-    max-width:1000px;
+    max-width:auto;
     display:flex;
-    margin:auto;
+    margin-left:15px;
+    margin-right:15px;
 }
 
 a{
@@ -23,7 +23,14 @@ a{
     height: 100px;
 
     h1{
-        color:white;
+        color:#707070;
+        font-size: 30px;
+        display: flex;
+        align-items:center;
+    }
+
+    span{
+        color:#C17139;
     }
 }
 
@@ -43,16 +50,22 @@ nav{
         height:80px;
     }
 
+    img{
+        margin-right:5px;
+    }
+
     li{
-        margin-left:20px;
-        margin-right:20px;
-        
+        margin-left:15px;
+        margin-right:15px;
+        display:flex;
+        align-items:center;
+
         a{
-            color:white;
-            font-size:20px; 
+            color:#707070;
+            font-size:20px;
 
             &:hover{
-                color:#cecece;    
+                color:#C17139;    
             }
         }
     }

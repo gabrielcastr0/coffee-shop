@@ -2,37 +2,37 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import About from './pages/About';
-import NotFound from './pages/NotFound';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+import Sobre from './pages/Sobre';
+import Erro from './pages/Erro';
+import Entrar from './pages/Entrar';
+import Cadastrar from './pages/Cadastrar';
 
 export default () => {
     return (
         <Switch>
-            {/* when access the url "/", will be redirect to Home Page */}
+            {/* quando acessar a url "/", ir para a page Home */}
             <Route exact path="/">
                 <Home />
             </Route>
 
-            {/* when access the url "/about", will be redirect to About Page */}
-            <Route exact path="/about">
-                <About />
+            {/* quando acessar a url "/sobre", ir para a page "Sobre" */}
+            <Route exact path="/sobre">
+                <Sobre />
             </Route>
 
-            {/* when access the url "/signin", will be redirect to SignIn Page */}
-            <Route exact path="/signin">
-                <SignIn />
+            {/* quando acessar a url "/entrar", ir para a page "Entrar" */}
+            <Route exact path="/entrar">
+                <Entrar />
             </Route>
 
-            {/* when access the url "/signin", will be redirect to SignUp Page */}
-            <Route exact path="/signup">
-                <SignUp />
+            {/* quando acessar a url "/cadastrar", ir para a page "Cadastrar" */}
+            <Route exact path="/cadastrar">
+                <Cadastrar />
             </Route>
 
-            {/* when access a page that not exist, will be redirect to NotFound Page */}
+            {/* quando acessar uma url que não existe, ir para a page "Erro" */}
             <Route>
-                <NotFound />
+                <Erro />
             </Route>
         </Switch>
     )

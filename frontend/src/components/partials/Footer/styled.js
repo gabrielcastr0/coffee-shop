@@ -5,7 +5,7 @@ export const FooterArea = styled.div`
     bottom:0;
     width:100%;
     height:100px; 
-    background-color:#803d38;
+    background-color:white;
 
 .container{
     max-width:1000px;
@@ -17,7 +17,7 @@ export const FooterArea = styled.div`
 }
 
 h1{
-    color:white;
+    color:#707070;
     font-size:20px;
 }
 `;
