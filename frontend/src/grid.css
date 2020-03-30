@@ -1,0 +1,73 @@
+.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12{
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+    display: block;
+    min-height: 1px;
+}
+
+.grid1{
+    width: 8.333%;
+}
+
+.grid-2{
+    width: calc(16.666% - 20px);
+}
+
+.grid-3{
+    width: calc(25% - 20px);
+}
+
+.grid4{
+    width: 33.333%;
+}
+
+.grid5{
+    width: 41.666%;
+}
+
+.grid-6{
+    width: calc(50% - 20px);
+}
+
+.grid7{
+    width: 58.333%;
+}
+
+.grid8{
+    width: 66.666%;
+}
+
+.grid9{
+    width: 75%;
+}
+
+.grid10{
+    width: 83.333%;
+}
+
+.grid11{
+    width: 91.333%;
+}
+
+.grid12{
+    width: 100%;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+@media (max-width: 739px){
+    .container{
+        max-width: 300px;
+    }
+
+    .grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12{
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        float: none;
+    }
+}

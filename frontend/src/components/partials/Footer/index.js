@@ -4,9 +4,9 @@ import { FooterArea } from './styled';
 const Footer = () => {
     return (
         <FooterArea>
-            <div className="container">
+            {/* <div className="container">
                 <h1>Coffee Shop | 2020</h1>
-            </div>
+            </div> */}
         </FooterArea>
     );
 }

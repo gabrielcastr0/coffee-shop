@@ -12,11 +12,31 @@ export const PageArea = styled.div`
     background-size: cover; /* Resize the background image to cover the entire container */
 }
 
-span{
-    padding-left:60px;
-    font-size: 20px;
-    color:#707070;
-    margin-bottom:40px; 
+.categorias h2{
+    margin-bottom: 40px;
+    margin-left: 10px;
+    color: #707070;
+    font-size:30px;
+}
+
+.categorias-item h3{
+    font-size:20px;
+    line-height:1em;
+    width: auto;
+    text-align:center;
+    font-weight:bold;
+    box-shadow: 15px solid white;
+    background-color:#252525;
+    color:white;
+    padding:10px 0 10px 0;
+    position:relative;
+    top:-30px;
+}
+
+.categorias-item img{
+    height:200px;
+    width:340px;
+    border-radius:10px;
 }
 
 `;

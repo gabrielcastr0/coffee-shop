@@ -11,11 +11,11 @@ const Header = () => {
             <div className="container">
                 <div className="logo">
                     <Link to="/">
-                        <h1><img src={coffee} height="64"></img>Coffee <span>Shop</span></h1>
+                        <h1><img src={coffee} height="64"></img>Coffee<span>Shop</span></h1>
                     </Link>
                 </div>
 
-                <nav>
+                <nav className="menu-nav">
                     <ul>
                         <li>
                             <Link to="/">Home</Link>
