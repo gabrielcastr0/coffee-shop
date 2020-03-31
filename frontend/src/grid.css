@@ -7,7 +7,7 @@
 }
 
 .grid1{
-    width: 8.333%;
+    width: calc(8.333% - 20px);
 }
 
 .grid-2{
@@ -19,11 +19,11 @@
 }
 
 .grid4{
-    width: 33.333%;
+    width: calc(33.333% - 20px);
 }
 
 .grid5{
-    width: 41.666%;
+    width: calc(41.666% - 20px);
 }
 
 .grid-6{
@@ -31,27 +31,27 @@
 }
 
 .grid7{
-    width: 58.333%;
+    width: calc(58.333% - 20px);
 }
 
 .grid8{
-    width: 66.666%;
+    width: calc(66.666% - 20px);
 }
 
 .grid9{
-    width: 75%;
+    width: calc(75% - 20px);
 }
 
 .grid10{
-    width: 83.333%;
+    width: calc(83.333% - 20px);
 }
 
 .grid11{
-    width: 91.333%;
+    width: calc(91.333% - 20px);
 }
 
 .grid12{
-    width: 100%;
+    width: calc(100% - 20px);
 }
 
 img{

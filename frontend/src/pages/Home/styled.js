@@ -31,6 +31,7 @@ export const PageArea = styled.div`
     padding:10px 0 10px 0;
     position:relative;
     top:-30px;
+    margin-bottom:50px;
 }
 
 .categorias-item img{
@@ -38,5 +39,46 @@ export const PageArea = styled.div`
     width:340px;
     border-radius:10px;
 }
+
+/* Produtos mais vendidos */
+
+.produtos h2{
+    margin-bottom: 40px;
+    margin-left: 10px;
+    color: #707070;
+    font-size:30px;
+}
+
+.produto-item{
+    height:350px;
+    width:340px;
+    background-color:#ffffff;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.produto-item h3{
+    padding:20px;
+    color: #707070;
+}
+
+.produto-item img{
+    /* background-color:blue; */
+    height:240px;
+    position: relative;
+    bottom:-20px;
+}
+
+.produto-item h4{
+    color: #707070;
+    /* background-color:blue; */
+    display:flex;
+    justify-content:flex-end;
+    margin-right:40px;
+    position:relative;
+    top:-175px;
+    /* margin-bottom:50px; */
+}
+
 
 `;
