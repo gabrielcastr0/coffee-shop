@@ -1,3 +1,7 @@
 import styled from 'styled-components';
 
-export const FooterArea = styled.div``;
+export const FooterArea = styled.div`
+
+
+
+`;

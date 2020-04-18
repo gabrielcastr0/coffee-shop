@@ -1,15 +1,25 @@
 import React from 'react';
-import { PageArea } from './styled';
-import { PageContainer, PageTitle } from '../../components/MainComponents';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import './style.css';
 
 const Page = () => {
     return(
-        <PageContainer>
-            <PageTitle>Login</PageTitle>
-            <PageArea>
-                
-            </PageArea>
-        </PageContainer>
+        <div className="container">
+            <h1 className="mt-3">Login</h1>
+            <div className="area-box">
+                <Form className="mt-3">
+                    <FormGroup>
+                        <Label for="exampleEmail">E-mail</Label>
+                        <Input type="email" name="email" id="exampleEmail" placeholder="Insira seu e-mail" />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="examplePassword">Senha</Label>
+                        <Input type="password" name="password" id="examplePassword" placeholder="Insira sua senha" />
+                    </FormGroup>
+                    <Button color="secondary">Fazer Login</Button>
+                </Form>
+            </div>
+        </div>
     );
 }
 

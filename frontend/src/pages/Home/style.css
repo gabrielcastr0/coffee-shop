@@ -1,0 +1,45 @@
+.card-body{
+    height: 20px;
+    text-align: center;
+    line-height: 2px;
+    background-color: black;
+    color: white;
+}
+
+.categorias{
+    color: #707070 !important;
+    font-size:30px;
+}
+
+.container-fluid{
+    margin-top: 50px;
+}
+
+.card-subtitle{
+    background-color: #ffffff;
+    color: #000000;
+    top: 40% !important;
+    margin-left: 220px;
+    position: absolute;
+}
+
+.card-subtitle-2{
+    background-color: #ffffff;
+    color: #000000;
+    top: 50% !important;
+    margin-left: 220px;
+    position: absolute;
+}
+
+.produtos-title{
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px){
+    .carousel{
+        position: relative;
+        z-index: 0;
+    }
+}

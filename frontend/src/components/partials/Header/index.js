@@ -1,43 +1,68 @@
-import React from 'react';
-import { HeaderArea } from './styled';
+import React, { useState } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink
+} from 'reactstrap';
+
 import { Link } from 'react-router-dom';
-import coffee from './coffee-cup.png';
-import avatar from './avatar.png';
+
+import './style.css'; // importando css
+import cup from './coffee-cup.png'; // importando logo
+import avatar from './avatar.png'; // importando avatar
 
 const Header = () => {
 
-    return (
-        <HeaderArea>
-            <div className="container">
-                <div className="logo">
-                    <Link to="/">
-                        <h1><img src={coffee} height="64"></img>Coffee<span>Shop</span></h1>
-                    </Link>
-                </div>
+    const [isOpen, setIsOpen] = useState(false);
 
-                <nav className="menu-nav">
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
+    const toggle = () => setIsOpen(!isOpen);
 
-                        <li>
-                            <Link to="/erro">Cardápio</Link>
-                        </li>
+    return(
+        <div>
+            <Navbar expand="md">
+                <Link to="/" className="link">
+                    <NavbarBrand>
+                        <img src={cup} height="64" className="d-inline-block align-center"></img>
+                        Coffee<span>Shop</span>
+                    </NavbarBrand>
+                </Link>
 
-                        <li>
-                            <Link to="/erro">Sobre nós</Link>
-                        </li>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                    <Nav className="ml-auto" navbar>
 
-                        <li>
-                            <img src={avatar} height="64"></img>
-                            <Link to="/erro">Entrar</Link>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </HeaderArea>
-    );
+                        <Link to="/" className="link">
+                            <NavItem>
+                                <NavLink>Home</NavLink>
+                            </NavItem>
+                        </Link>
+
+                        <Link to="/erro" className="link">
+                            <NavItem>
+                                <NavLink>Cardápio</NavLink>
+                            </NavItem>
+                        </Link>
+
+                        <Link to="/erro" className="link">
+                            <NavItem>
+                                <NavLink>Sobre Nós</NavLink>
+                            </NavItem>
+                        </Link>
+
+                        <Link to="/entrar" className="link">
+                            <NavItem>
+                                <NavLink><img src={avatar} height="64" className="d-inline-block align-center"></img>Entrar</NavLink>
+                            </NavItem>
+                        </Link>
+                    </Nav>
+                </Collapse>
+            </Navbar>
+        </div>
+    )
 }
 
 export default Header;
