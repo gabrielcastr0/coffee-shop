@@ -5,7 +5,6 @@ const Page = () => {
     return (
         <div className="container-fluid">
             <h1 className="mt-3">Página não encontrada</h1>
-            <Link to="/">Voltar para a home</Link>
         </div>
     )
 }

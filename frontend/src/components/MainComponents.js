@@ -10,3 +10,10 @@ export const PageContainer = styled.div`
 export const PageTitle = styled.h1``;
 
 export const PageBody = styled.div``;
+
+export const ErrorMessage = styled.div`
+    margin:10px;
+    background-color:#ffcaca;
+    color:#000;
+    border:2px solid #ff0000;
+`;
