@@ -71,7 +71,7 @@ const Page = () => {
       });
 
       return (
-        <div>
+        <div className="container">
 
             {/* Carousel */}
             <section>
@@ -85,7 +85,7 @@ const Page = () => {
 
             {/* Cards */}
             <section>
-              <div className="container-fluid">
+              <div className="container mt-5">
 
                 <span className="categorias">Categorias</span>
 
@@ -132,7 +132,7 @@ const Page = () => {
 
             {/* Cards 2 */}
             <section>
-              <div className="container-fluid">
+              <div className="container mt-5">
 
                 <span className="categorias">Produtos mais vendidos</span>
 
@@ -143,8 +143,8 @@ const Page = () => {
                       <CardImg top width="100%" src={frape} alt="Card image cap" />
                       <CardBody className="produtos-title">
                         <CardTitle>Frapê Baunilha</CardTitle>
-                        <CardSubtitle>330ML</CardSubtitle>
-                        <CardSubtitle className="card-subtitle-2">R$10, 50</CardSubtitle>
+                        {/* <CardSubtitle>330ML</CardSubtitle> */}
+                        {/* <CardSubtitle className="card-subtitle-2">R$10, 50</CardSubtitle> */}
                       </CardBody>
                     </Card>
                   </div>
@@ -154,8 +154,8 @@ const Page = () => {
                       <CardImg top width="100%" src={frape} alt="Card image cap" />
                       <CardBody className="produtos-title">
                         <CardTitle>Frapê Baunilha</CardTitle>
-                        <CardSubtitle>330ML</CardSubtitle>
-                        <CardSubtitle className="card-subtitle-2">R$10, 50</CardSubtitle>
+                        {/* <CardSubtitle>330ML</CardSubtitle> */}
+                        {/* <CardSubtitle className="card-subtitle-2">R$10, 50</CardSubtitle> */}
                       </CardBody>
                     </Card>
                   </div>
@@ -165,8 +165,8 @@ const Page = () => {
                       <CardImg top width="100%" src={frape} alt="Card image cap" />
                       <CardBody className="produtos-title">
                         <CardTitle>Frapê Baunilha</CardTitle>
-                        <CardSubtitle>330ML</CardSubtitle>
-                        <CardSubtitle className="card-subtitle-2">R$10, 50</CardSubtitle>
+                        {/* <CardSubtitle>330ML</CardSubtitle> */}
+                        {/* <CardSubtitle className="card-subtitle-2">R$10, 50</CardSubtitle> */}
                       </CardBody>
                     </Card>
                   </div>
@@ -176,8 +176,8 @@ const Page = () => {
                       <CardImg top width="100%" src={frape} alt="Card image cap" />
                       <CardBody className="produtos-title">
                         <CardTitle className="produtos-title-main">Frapê Baunilha</CardTitle>
-                        <CardSubtitle>330ML</CardSubtitle>
-                        <CardSubtitle className="card-subtitle-2">R$10, 50</CardSubtitle>
+                        {/* <CardSubtitle>330ML</CardSubtitle> */}
+                        {/* <CardSubtitle className="card-subtitle-2">R$10, 50</CardSubtitle> */}
                       </CardBody>
                     </Card>
                   </div>

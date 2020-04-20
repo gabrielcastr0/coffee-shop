@@ -31,7 +31,7 @@ const Header = () => {
     const toggle = () => setIsOpen(!isOpen);
 
     return(
-        <div>
+        <div className="container">
             <Navbar expand="md">
                 <Link to="/" className="link">
                     <NavbarBrand>
@@ -64,7 +64,7 @@ const Header = () => {
                                     </NavItem>
                                 </Link>
 
-                                <Link to="/erro" className="link">
+                                <Link to="/sobre" className="link">
                                     <NavItem>
                                         <NavLink>Sobre Nós</NavLink>
                                     </NavItem>
@@ -92,7 +92,7 @@ const Header = () => {
                                     </NavItem>
                                 </Link>
 
-                                <Link to="/erro" className="link">
+                                <Link to="/sobre" className="link">
                                     <NavItem>
                                         <NavLink>Sobre Nós</NavLink>
                                     </NavItem>

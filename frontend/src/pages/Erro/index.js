@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Page = () => {
     return (
-        <div className="container-fluid">
-            <h1 className="mt-3">Página não encontrada</h1>
+        <div className="container">
+            <h3 className="mt-3">Página em construção...</h3>
         </div>
     )
 }
