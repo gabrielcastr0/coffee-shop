@@ -4,8 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Sobre from './pages/Sobre';
 import Erro from './pages/Erro';
-import Entrar from './pages/Entrar';
-import Cadastrar from './pages/Cadastrar';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 
 export default () => {
     return (
@@ -21,13 +21,13 @@ export default () => {
             </Route>
 
             {/* quando acessar a url "/entrar", ir para a page "Entrar" */}
-            <Route exact path="/entrar">
-                <Entrar />
+            <Route exact path="/signin">
+                <SignIn />
             </Route>
 
-            {/* quando acessar a url "/cadastrar", ir para a page "Cadastrar" */}
-            <Route exact path="/cadastrar">
-                <Cadastrar />
+            {/* quando acessar a url "/singup", ir para a page "Cadastrar" */}
+            <Route exact path="/signup">
+                <SignUp />
             </Route>
 
             {/* quando acessar uma url que não existe, ir para a page "Erro" */}

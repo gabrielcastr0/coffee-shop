@@ -1,43 +1,43 @@
 import Cookies from 'js-cookie';
 import qs from 'qs';
 
-const BASEAPI = 'https://my-json-server.typicode.com/gabrielcastr0/database/user'
+const BASEAPI = 'http://alunos.b7web.com.br:501';
 
-// requisição post
 const apiFetchPost = async (endpoint, body) => {
 
-    if(!body.token){
+    if (!body.token) {
         let token = Cookies.get('token');
-        if(token){
+
+        if (token) {
             body.token = token;
         }
     }
 
-    const res = await fetch(BASEAPI+endpoint, {
-        method:'POST',
-        header:{
+    const res = await fetch(BASEAPI + endpoint, {
+        method: 'POST',
+        headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body:JSON.stringify(body)
+        body: JSON.stringify(body)
     });
 
     const json = await res.json();
 
-    if(json.notallowed){
-        window.location.href = '/entrar';
+    if (json.notallowed) {
+        window.location.href = '/signin';
         return;
     }
 
     return json;
 }
 
-// requisição get
 const apiFetchGet = async (endpoint, body = []) => {
 
-    if(!body.token){
+    if (!body.token) {
         let token = Cookies.get('token');
-        if(token){
+
+        if (token) {
             body.token = token;
         }
     }
@@ -46,23 +46,91 @@ const apiFetchGet = async (endpoint, body = []) => {
 
     const json = await res.json();
 
-    if(json.notallowed){
-        window.location.href = '/entrar';
+    if (json.notallowed) {
+        window.location.href = '/signin';
         return;
     }
 
     return json;
 }
 
-const CShopAPI = {
-    login:async (email, password) => {
-        const json = await apiFetchPost(
-            '/user/',
-            {email, password}
-        );
+const apiFetchFile = async (endpoint, body) => {
+    if (!body.token) {
+        let token = Cookies.get('token');
 
+        if (token) {
+            body.append('token', token);
+        }
+    }
+
+    const res = await fetch(BASEAPI + endpoint, {
+        method: 'POST',
+        body
+    });
+
+    const json = await res.json();
+
+    if (json.notallowed) {
+        window.location.href = '/signin';
+        return;
+    }
+
+    return json;
+}
+
+const OlxAPI = {
+
+    login: async (email, password) => {
+        const json = await apiFetchPost(
+            '/user/signin', {
+                email,
+                password
+            }
+        );
+        return json;
+    },
+
+    register: async (name, stateLoc, email, password, confirmPassword) => {
+        const json = await apiFetchPost(
+            '/user/signup', {
+                name,
+                state: stateLoc,
+                email,
+                password,
+                confirmPassword
+            }
+        );
+        return json;
+    },
+
+    getStates: async () => {
+        const json = await apiFetchGet('/states');
+        return json.states;
+    },
+
+    getCategories: async () => {
+        const json = await apiFetchGet('/categories');
+        return json.categories;
+    },
+
+    getAds: async (options) => {
+        const json = await apiFetchGet('/ad/list', options);
+        return json;
+    },
+
+    getAdInfo: async (adId, relatedAds = false) => {
+        const json = await apiFetchGet('/ad/item', {
+            id: adId,
+            other: relatedAds
+        });
+        return json;
+    },
+
+    addAd: async (fData) => {
+        const json = await apiFetchFile('/ad/add', fData);
         return json;
     }
+
 };
 
-export default ()=>CShopAPI;
+export default () => OlxAPI;

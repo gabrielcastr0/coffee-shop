@@ -70,7 +70,7 @@ const Header = () => {
                                     </NavItem>
                                 </Link>
 
-                                <Link to="/entrar" className="link">
+                                <Link to="/signin" className="link">
                                     <NavItem onClick={handleLogout}>
                                         <NavLink><img src={avatar} height="64" className="d-inline-block align-center"></img>Sair</NavLink>
                                     </NavItem>
@@ -98,7 +98,13 @@ const Header = () => {
                                     </NavItem>
                                 </Link>
 
-                                <Link to="/entrar" className="link">
+                                {/* <Link to="/signup" className="link">
+                                    <NavItem>
+                                        <NavLink>Cadastrar</NavLink>
+                                    </NavItem>
+                                </Link> */}
+
+                                <Link to="/signin" className="link">
                                     <NavItem>
                                         <NavLink><img src={avatar} height="64" className="d-inline-block align-center"></img>Entrar</NavLink>
                                     </NavItem>
