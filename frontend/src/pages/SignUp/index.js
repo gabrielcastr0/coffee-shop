@@ -1,29 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 import useApi from '../../components/helpers/CShopAPI';
 import { doLogin } from '../../components/helpers/AuthHandler';
 
-const SignIn = () => {
+const SignUp = () => {
     const api = useApi();
 
     const [name, setName] = useState('');
-    const [stateLoc, setStateLoc] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const [stateLocList, setStateLocList] = useState([]);
-
     const [disabled, setDisabled] = useState(false);
     const [error, setError] = useState('');
-
-    useEffect(() => {
-        const getStates = async () => {
-            const sList = await api.getStates();
-            setStateLocList(sList);
-        }
-        getStates();
-    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -31,14 +20,15 @@ const SignIn = () => {
         setError('');
 
         if ( password !== confirmPassword ) {
-            setError('Confirmação de senha com erro!');
+            setError('As senhas não são iguais!');
             setDisabled(false);
             return;
         }
 
-        const json = await api.register(name, stateLoc, email, password, confirmPassword);
+        const json = await api.register(name, email, password, confirmPassword);
 
         if (json.error) {
+            setDisabled(false);
             setError(json.error);
         } else {
             doLogin(json.token);
@@ -51,7 +41,7 @@ const SignIn = () => {
     return(
 
         <div className="container">
-            <h1 className="mt-3">Login</h1>
+            <h5 className="mt-3">Home / Login / Cadastrar</h5>
 
             <div className="area-box">
                 <Form className="mt-3" onSubmit={handleSubmit}>
@@ -59,6 +49,7 @@ const SignIn = () => {
                         <Label for="nomeCompleto">Nome Completo</Label>
                         <Input 
                             required
+                            pattern="[a-zA-Z\s]+$"
                             type="text" 
                             name="nomeCompleto" 
                             id="nomeCompleto" 
@@ -72,7 +63,7 @@ const SignIn = () => {
                         <Label for="email">E-mail</Label>
                         <Input 
                             required
-                            // pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                             type="email" 
                             name="email" 
                             id="email" 
@@ -108,13 +99,13 @@ const SignIn = () => {
                             disabled={disabled}/>
                     </FormGroup>
 
-                    <Button color="secondary" disabled={disabled}>Fazer Login</Button>
+                    <Button color="secondary" disabled={disabled}>Cadastrar</Button>
                 </Form>
             </div>
 
             {error &&
                 <Alert color="danger mt-2">
-                    Usuário e/ou senha inválidos!
+                    Dado(s) já existentes!
                 </Alert>
             }
             
@@ -122,4 +113,4 @@ const SignIn = () => {
     );
 }
 
-export default SignIn;
+export default SignUp;

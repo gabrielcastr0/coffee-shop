@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Form, FormGroup, Label, Input, Alert, NavItem, NavLink } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 import './style.css';
-
 import { Link } from 'react-router-dom';
-
 import useAPI from '../../components/helpers/CShopAPI';
 import { doLogin } from '../../components/helpers/AuthHandler';
 
@@ -25,6 +23,7 @@ const SignIn = () => {
         const json = await api.login(email, password);
 
         if(json.error){
+            setDisabled(false);
             setError(json.error);
         }else{
             doLogin(json.token);
@@ -35,18 +34,17 @@ const SignIn = () => {
     return(
 
         <div className="container">
-            <h1 className="mt-3">Login</h1>
+            <h5 className="mt-3">Home / Login</h5>
 
             <div className="area-box">
                 <Form className="mt-3" onSubmit={handleSubmit}>
                     <FormGroup>
-                        <Label for="exampleEmail">E-mail</Label>
+                        <Label>E-mail</Label>
                         <Input 
                             required
-                            // pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                             type="email" 
-                            name="email" 
-                            id="exampleEmail" 
+                            name="email"
                             placeholder="Insira seu e-mail" 
                             value={email} 
                             onChange={e=>setEmail(e.target.value)} 
@@ -54,24 +52,27 @@ const SignIn = () => {
                     </FormGroup>
 
                     <FormGroup>
-                        <Label for="examplePassword">Senha</Label>
+                        <Label>Senha</Label>
                         <Input 
                             required
                             type="password" 
-                            name="password" 
-                            id="examplePassword" 
+                            name="password"
                             placeholder="Insira sua senha" 
                             value={password} 
                             onChange={e=>setPassword(e.target.value)} 
                             disabled={disabled}/>
                     </FormGroup>
-                    <Button color="secondary" disabled={disabled}>Fazer Login</Button>
+                    <Button color="secondary" disabled={disabled}>
+                        Fazer Login
+                    </Button>
                 </Form>
             </div>
 
             <div className="mt-2">
-                <span id="semConta">Não tem conta? 
-                    <Link to="/signup" className="linkCadastro"> Clique aqui para se cadastrar</Link>
+                <span id="semConta">Não tem conta?  
+                    <Link to="/signup" className="linkCadastro"> 
+                    &nbsp;Clique aqui para se cadastrar
+                    </Link>
                 </span>
             </div>
 

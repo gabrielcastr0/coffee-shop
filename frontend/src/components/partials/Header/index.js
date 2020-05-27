@@ -6,21 +6,21 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  Button
+  NavLink
 } from 'reactstrap';
 
 import { Link } from 'react-router-dom';
-import { isLogged, doLogout } from '../../helpers/AuthHandler'; // importando function isLogged
+import { isLogged, doLogout } from '../../helpers/AuthHandler';
 
-import './style.css'; // importando css
-import cup from './coffee-cup.png'; // importando logo
-import avatar from './avatar.png'; // importando avatar
+import './style.css';
+import cup from './coffee-cup.png';
+import avatar from './avatar.png';
 
 const Header = () => {
 
-    let logged = isLogged(); // armazena true or false
+    let logged = isLogged(); // true or false
 
+    // function that call the doLogout() and do refresh to homepage
     const handleLogout = () => {
         doLogout();
         window.location.href = '/';
@@ -35,7 +35,12 @@ const Header = () => {
             <Navbar expand="md">
                 <Link to="/" className="link">
                     <NavbarBrand>
-                        <img src={cup} height="64" className="d-inline-block align-center"></img>
+                        <img 
+                            src={cup} 
+                            height="64" 
+                            className="d-inline-block align-center"
+                            alt="">
+                        </img>
                         Coffee<span>Shop</span>
                     </NavbarBrand>
                 </Link>
@@ -44,6 +49,7 @@ const Header = () => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>
 
+                        {/* when is Logged */}
                         {logged &&
                             <>
                                 <Link to="/" className="link">
@@ -52,19 +58,19 @@ const Header = () => {
                                     </NavItem>
                                 </Link>
 
-                                <Link to="/erro" className="link">
+                                <Link to="/products" className="link">
                                     <NavItem>
                                         <NavLink>Produtos</NavLink>
                                     </NavItem>
                                 </Link>
 
-                                <Link to="/erro" className="link">
+                                <Link to="/add-product" className="link">
                                     <NavItem>
                                         <NavLink>Adicionar Produto</NavLink>
                                     </NavItem>
                                 </Link>
 
-                                <Link to="/sobre" className="link">
+                                <Link to="/about" className="link">
                                     <NavItem>
                                         <NavLink>Sobre Nós</NavLink>
                                     </NavItem>
@@ -72,12 +78,20 @@ const Header = () => {
 
                                 <Link to="/signin" className="link">
                                     <NavItem onClick={handleLogout}>
-                                        <NavLink><img src={avatar} height="64" className="d-inline-block align-center"></img>Sair</NavLink>
+                                        <NavLink>
+                                            <img 
+                                                src={avatar} 
+                                                height="64" 
+                                                className="d-inline-block align-center"
+                                                alt="">
+                                            </img>Sair
+                                        </NavLink>
                                     </NavItem>
                                 </Link>
                             </>
                         } 
 
+                        {/* when isn't Logged */}
                         {!logged &&
                             <>
                                 <Link to="/" className="link">
@@ -86,33 +100,32 @@ const Header = () => {
                                     </NavItem>
                                 </Link>
 
-                                <Link to="/erro" className="link">
+                                <Link to="/products" className="link">
                                     <NavItem>
                                         <NavLink>Produtos</NavLink>
                                     </NavItem>
                                 </Link>
 
-                                <Link to="/sobre" className="link">
+                                <Link to="/about" className="link">
                                     <NavItem>
                                         <NavLink>Sobre Nós</NavLink>
                                     </NavItem>
                                 </Link>
 
-                                {/* <Link to="/signup" className="link">
-                                    <NavItem>
-                                        <NavLink>Cadastrar</NavLink>
-                                    </NavItem>
-                                </Link> */}
-
                                 <Link to="/signin" className="link">
                                     <NavItem>
-                                        <NavLink><img src={avatar} height="64" className="d-inline-block align-center"></img>Entrar</NavLink>
+                                        <NavLink>
+                                            <img 
+                                                src={avatar} 
+                                                height="64" 
+                                                className="d-inline-block align-center"
+                                                alt="">
+                                            </img>Entrar
+                                        </NavLink>
                                     </NavItem>
                                 </Link>
                             </>
                         }          
-
-                        
                     </Nav>
                 </Collapse>
             </Navbar>

@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
+import './style.css';
 
-const Page = () => {
+const About = () => {
     return (
-        <div className="container mt-5">
+        <div className="container">
+            <h5 className="mt-3">Home / About</h5>
             <ListGroup>
                 <ListGroupItem>Gabriel Souza de Castro e Rosa</ListGroupItem>
                 <ListGroupItem>Marcella Canedo Tristão</ListGroupItem>
@@ -16,4 +18,4 @@ const Page = () => {
     )
 }
 
-export default Page;
+export default About;

@@ -54,33 +54,10 @@ const apiFetchGet = async (endpoint, body = []) => {
     return json;
 }
 
-const apiFetchFile = async (endpoint, body) => {
-    if (!body.token) {
-        let token = Cookies.get('token');
-
-        if (token) {
-            body.append('token', token);
-        }
-    }
-
-    const res = await fetch(BASEAPI + endpoint, {
-        method: 'POST',
-        body
-    });
-
-    const json = await res.json();
-
-    if (json.notallowed) {
-        window.location.href = '/signin';
-        return;
-    }
-
-    return json;
-}
-
-const OlxAPI = {
+const CShopAPI = {
 
     login: async (email, password) => {
+        // webservice query
         const json = await apiFetchPost(
             '/user/signin', {
                 email,
@@ -106,31 +83,8 @@ const OlxAPI = {
     getStates: async () => {
         const json = await apiFetchGet('/states');
         return json.states;
-    },
-
-    getCategories: async () => {
-        const json = await apiFetchGet('/categories');
-        return json.categories;
-    },
-
-    getAds: async (options) => {
-        const json = await apiFetchGet('/ad/list', options);
-        return json;
-    },
-
-    getAdInfo: async (adId, relatedAds = false) => {
-        const json = await apiFetchGet('/ad/item', {
-            id: adId,
-            other: relatedAds
-        });
-        return json;
-    },
-
-    addAd: async (fData) => {
-        const json = await apiFetchFile('/ad/add', fData);
-        return json;
     }
 
 };
 
-export default () => OlxAPI;
+export default () => CShopAPI;

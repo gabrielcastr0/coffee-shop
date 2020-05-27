@@ -5,15 +5,18 @@ import {
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
+  Card, 
+  CardImg,
+  CardBody,
+  CardTitle
 } from 'reactstrap';
 
 import './style.css';
-import background from './back.png'; // importando banner
-import expresso from './expresso-background.jpg'; // importando expresso background
-import frape from './frape.png' // importando frape
+import background from './back.png';
+import expresso from './expresso-background.jpg';
+import frape from './frape.png';
 
+// Items Carousel
 const items = [
     {
       src: background,
@@ -34,7 +37,7 @@ const items = [
     }
 ];
 
-const Page = () => {
+const Home = () => {
 
     // Carousel
     const [activeIndex, setActiveIndex] = useState(0);
@@ -113,7 +116,7 @@ const Page = () => {
                     <Card>
                       <CardImg top width="100%" src={expresso} alt="Card image cap" />
                       <CardBody>
-                        <CardTitle>Expresos</CardTitle>
+                        <CardTitle>Expressos</CardTitle>
                       </CardBody>
                     </Card>
                   </div>
@@ -122,7 +125,7 @@ const Page = () => {
                     <Card>
                       <CardImg top width="100%" src={expresso} alt="Card image cap" />
                       <CardBody>
-                        <CardTitle>Expresos</CardTitle>
+                        <CardTitle>Expressos</CardTitle>
                       </CardBody>
                     </Card>
                   </div>
@@ -189,4 +192,4 @@ const Page = () => {
       );
 }
 
-export default Page;
+export default Home;
